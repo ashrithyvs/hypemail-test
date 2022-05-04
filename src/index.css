@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+.primary-btn{
+  @apply px-4 py-2 items-center bg-primary text-white font-semibold rounded-lg text-sm hover:bg-primary-hover;
+  }
+.secondary-btn{
+    @apply px-4 py-2 h-min shadow-md items-center border  bg-secondary text-gray-900 font-semibold rounded-lg text-sm hover:bg-secondary-hover;
+    }
+
+.active-tab{
+  @apply inline-block border cursor-pointer shadow-md py-2 px-6 text-white bg-blue-600 ;
+}
+.inactive-tab{
+  @apply inline-block border-gray-200 shadow-md border-[1px] py-2 px-6 cursor-pointer hover:text-gray-900 hover:bg-gray-100 bg-white dark:hover:bg-gray-800 dark:hover:text-white;
+}
+
+.input{
+  @apply bg-gray-50 w-full text-gray-500 border-gray-200 rounded-xl;
+}
+
+.active-step{
+  @apply inline-block p-4 cursor-pointer text-primary rounded-t-lg border-b-2 border-primary  dark:text-blue-500 dark:border-blue-500;
+}
+
+.inactive-step{
+  @apply inline-block p-4 cursor-pointer rounded-t-lg border-b-2 border-transparent hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300;
+}
+
+.disabled-step{
+  @apply inline-block p-4 text-gray-400 rounded-t-lg cursor-not-allowed dark:text-gray-500;
+}
