@@ -2,10 +2,21 @@ import React from "react";
 import { AiFillClockCircle } from "react-icons/ai";
 export default function CampaignListItem({ title, emailAccounts, meta }) {
   return (
-    <div className="flex-col rounded-lg space-y-2 pt-4 py-2 bg-white border shadow px-4">
+    <div className="flex-col rounded-2xl space-y-2 pt-4 py-4 bg-white border shadow px-4">
       <div className="flex-col space-y-2">
         <div className="flex justify-between">
-          <h4 className="font-semibold text-lg">{title}</h4>{" "}
+          <div className="flex space-x-4">
+            <h4 className="font-semibold text-lg">{title}</h4>
+            <div className="flex space-x-3">
+              {meta.tags.map((tag) => {
+                return (
+                  <span className="px-3 text-sm font-medium h-min py-1 rounded-full bg-orange-100 text-orange-700">
+                    {tag}
+                  </span>
+                );
+              })}
+            </div>
+          </div>
           <span
             className={`${
               meta.status === "Running"
@@ -72,8 +83,8 @@ export default function CampaignListItem({ title, emailAccounts, meta }) {
           <span className="text-md text-gray-500">Step</span>
         </div>
       </div>
-      <div className="flex justify-between">
-        <div className="flex items-center justify-center space-x-2 px-2 py-[0.1rem] rounded-xl w-1/6 bg-purple-200 text-purple-800">
+      <div className="flex justify-between items-center">
+        <div className="flex items-center justify-center text-sm py-1 space-x-1 px-2 h-min rounded-xl bg-purple-100 text-purple-800">
           <AiFillClockCircle color="#5521B5" />{" "}
           <span>{meta.ETL} days left</span>
         </div>

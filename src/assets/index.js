@@ -9,3 +9,8 @@ export { default as Avatar } from "./Avatar.png";
 export { default as Collapse } from "./collapse.svg";
 export { default as emailPicture } from "./emailPicture.png";
 export { default as LeadsImage } from "./leadsImage.png";
+export { default as Twitch } from "./Twitch.svg";
+export { default as Apple } from "./Apple.svg";
+export { default as Google } from "./Google.svg";
+export { default as ColdMailCourse } from "./ColdMailCourse.svg";
+export { default as Blog } from "./Blog.svg";

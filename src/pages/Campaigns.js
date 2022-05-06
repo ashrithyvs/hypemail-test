@@ -5,6 +5,7 @@ import RecentReplyItem from "../components/RecentReplyItem";
 import { emailPicture } from "../assets/index";
 import { RiFilter2Fill } from "react-icons/ri";
 import CreateCampaignModal from "../components/CreateCampaignModal";
+import Pagination from "../components/Pagination";
 export default function Campaigns() {
   const [dataRange, setDataRange] = useState("All");
 
@@ -27,6 +28,7 @@ export default function Campaigns() {
         "thomas@ionio.io",
       ],
       meta: {
+        tags: ["Product Launch", "Marketing"],
         prospectsCount: 556,
         sentCount: 556,
         openedPercentage: 62,
@@ -49,6 +51,7 @@ export default function Campaigns() {
         "thomas@ionio.io",
       ],
       meta: {
+        tags: ["Product Launch", "Marketing"],
         prospectsCount: 556,
         sentCount: 556,
         openedPercentage: 62,
@@ -72,6 +75,7 @@ export default function Campaigns() {
         "thomas@hypemail.io",
       ],
       meta: {
+        tags: ["Product Launch", "Marketing"],
         prospectsCount: 556,
         sentCount: 556,
         openedPercentage: 62,
@@ -127,24 +131,24 @@ export default function Campaigns() {
   return (
     <div className="flex-col items-center justify-center my-4">
       <div className="flex items-center justify-between ">
-        <div className="flex justify-start w-1/2 items-center space-x-10">
+        <div className="flex justify-start w-1/2 items-center space-x-10 ">
           <h4 className="text-2xl font-bold">Campaigns</h4>
-          <div>
+          <div className="w-full flex self-center">
             <input
               type="search"
               name="search"
               className="bg-gray-50 w-full text-gray-500 border-gray-200 rounded-xl"
-              placeholder="Search for all Campaigns"
+              placeholder="Search for all Campaigns by Name & Tags"
             />
             <label
               for="search"
-              style={{ position: "relative", left: 250, top: -28 }}
+              style={{ position: "relative", left: -30, top: 12 }}
             >
               <RiFilter2Fill />
             </label>
           </div>
         </div>
-        <div className="w-1/2 justify-end flex space-x-2">
+        <div className="w-1/2 justify-end flex space-x-2 items-center">
           <button
             onClick={() => toggleModal("large-modal")}
             className="flex space-x-2 primary-btn"
@@ -152,6 +156,7 @@ export default function Campaigns() {
             <AiOutlinePlus />
             <span>Create a Campaign</span>
           </button>
+          <Pagination />
         </div>
       </div>
       <div className="flex space-x-6">
@@ -196,20 +201,25 @@ export default function Campaigns() {
             })}
           </div>
         </div>
-        <div className="flex-col space-y-4 w-2/6">
-          <h4 className="font-semibold text-gray-900 text-xl">
+        <div className="flex-col shadow bg-white rounded px-6 h-min pt-4 mt-6  w-2/6">
+          <h4 className="font-semibold text-gray-900 text-xl my-4">
             Recent Replies
           </h4>
-          {repliesData.map((reply) => {
-            return (
-              <RecentReplyItem
-                profilePicture={reply.profilePicture}
-                mailId={reply.mailId}
-                body={reply.body}
-                timeStamp={reply.timeStamp}
-              />
-            );
-          })}
+          <div className="flex-col">
+            {repliesData.map((reply) => {
+              return (
+                <RecentReplyItem
+                  profilePicture={reply.profilePicture}
+                  mailId={reply.mailId}
+                  body={reply.body}
+                  timeStamp={reply.timeStamp}
+                />
+              );
+            })}
+          </div>
+          <h4 className="text-primary text-center cursor-pointer rounded-lg my-1 hover:bg-secondary-hover py-3">
+            View More
+          </h4>
         </div>
       </div>
       <CreateCampaignModal toggleModal={toggleModal} />

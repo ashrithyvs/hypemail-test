@@ -14,7 +14,7 @@ export default function RecentReplyItem({
     }
   }
   return (
-    <div className="border shadow-sm bg-white flex px-3 py-3 items-center space-x-4">
+    <div className="border-b-2 bg-white flex py-3 items-center space-x-4">
       <img
         src={profilePicture}
         className="rounded-full w-[50px] h-[50px]"
@@ -26,7 +26,7 @@ export default function RecentReplyItem({
           <h4 className="text-md text-gray-400">{timeStamp}</h4>
         </div>
 
-        <div className="flex">
+        <div className="flex items-center">
           <p className="text-md text-gray-900">{truncateString(body, 80)}</p>
           <span className="text-md font-semibold cursor-pointer p-1 h-min rounded hover:bg-secondary-hover text-primary">
             View

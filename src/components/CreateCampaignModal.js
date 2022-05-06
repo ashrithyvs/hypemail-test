@@ -10,6 +10,10 @@ export default function CreateCampaignModal({ toggleModal }) {
     { value: "rohan@ionio.io", label: "rohan@ionio.io" },
     { value: "pranav@ionio.io", label: "pranav@ionio.io" },
   ];
+  const tags = [
+    { value: "Product Launch", label: "Product Launch" },
+    { value: "Marketing", label: "Marketing" },
+  ];
   const navigate = useNavigate();
   return (
     <div
@@ -53,12 +57,7 @@ export default function CreateCampaignModal({ toggleModal }) {
               <label for="tags">
                 <span className="font-semibold">Tags</span>
               </label>
-              <input
-                id="tags"
-                placeholder="Let’s hope my funny emails actually get us replies"
-                className="input"
-                type="text"
-              />
+              <Select options={tags} isSearchable isMulti />
             </div>
           </form>
         </div>

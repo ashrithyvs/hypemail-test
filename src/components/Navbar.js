@@ -1,5 +1,6 @@
 import React from "react";
 import { Avatar, Collapse } from "../assets";
+import { IoIosArrowDown } from "react-icons/io";
 export default function Navbar({ utils, setUtils }) {
   return (
     <div className="flex flex-col w-full">
@@ -24,6 +25,7 @@ export default function Navbar({ utils, setUtils }) {
                   className="mx-auto rounded-full object-cover rounded-full h-10 w-10 "
                 />
                 <span className="text-bold font-medium">Thomas Manwaring</span>
+                <IoIosArrowDown />
               </div>
             </div>
           </div>

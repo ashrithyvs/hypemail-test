@@ -1,5 +1,5 @@
 import "./App.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Navbar from "./components/Navbar";
 import Sidebar from "./components/Sidebar";
 import {
@@ -15,6 +15,7 @@ import Footer from "./components/Footer";
 import CreateCampaignFlow from "./pages/CreateCampaignFlow";
 function App() {
   const [utils, setUtils] = useState({ sideBar: true });
+
   const pages = [
     { Component: Overview, slug: "/" },
     { Component: Templates, slug: "/templates" },
@@ -24,10 +25,10 @@ function App() {
   ];
 
   return (
-    <div className="bg-[#fff] dark:bg-gray-800">
+    <div className="bg-gray-50 dark:bg-gray-800">
       <div className="overflow-hidden relative">
         <div className="flex items-start justify-between">
-          {utils.sideBar ? <Sidebar /> : null}
+          {utils.sideBar ? <Sidebar utils={utils} /> : null}
           <div className="w-full flex-col space-y-4">
             <Navbar utils={utils} setUtils={setUtils} />
             <div className="px-6">
