@@ -1,18 +1,13 @@
-import "./App.css";
-import { useEffect, useState } from "react";
+import "./App.scss";
+import { useState } from "react";
 import Navbar from "./components/Navbar";
 import Sidebar from "./components/Sidebar";
-import {
-  Campaigns,
-  Overview,
-  Templates,
-  EmailAccounts,
-  Help,
-  Login,
-} from "./pages";
+import { Campaigns, Overview, Templates, EmailAccounts, Help } from "./pages";
 import { Routes, Route } from "react-router-dom";
 import Footer from "./components/Footer";
 import CreateCampaignFlow from "./pages/CreateCampaignFlow";
+import EmailAccountSettings from "./components/EmailAccountSettings";
+
 function App() {
   const [utils, setUtils] = useState({ sideBar: true });
 
@@ -37,9 +32,17 @@ function App() {
                   path="/create-campaign"
                   element={<CreateCampaignFlow />}
                 />
-                {pages.map((Item) => {
+                <Route
+                  path="/update-email"
+                  element={<EmailAccountSettings />}
+                />
+                {pages.map((Item, idx) => {
                   return (
-                    <Route path={Item.slug} element={<Item.Component />} />
+                    <Route
+                      key={idx}
+                      path={Item.slug}
+                      element={<Item.Component />}
+                    />
                   );
                 })}
               </Routes>

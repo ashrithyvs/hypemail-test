@@ -44,7 +44,7 @@ export default function EmailAccounts() {
   ];
   return (
     <div className="flex-col items-center justify-center my-4">
-      <div className="flex justify-between">
+      <div className="xl:flex  xl:justify-between">
         <div className="w-full flex items-center space-x-6">
           <h4 className="text-2xl font-bold">Email Accounts</h4>
           <input
@@ -54,7 +54,7 @@ export default function EmailAccounts() {
             placeholder="Search for connected email accounts"
           />
         </div>
-        <div className="w-1/2 justify-end flex space-x-2 items-center">
+        <div className="xl:w-1/2 my-2 xl:my-0 justify-end flex space-x-2 items-center">
           <button
             // onClick={() => toggleModal("large-modal")}
             className="flex space-x-2 primary-btn"
@@ -65,13 +65,13 @@ export default function EmailAccounts() {
           <Pagination />
         </div>
       </div>
-      <div className="flex space-x-6">
-        <div className="flex-col space-y-6 w-4/6 mt-6">
-          {emailAccounts.map((account) => {
-            return <EmailAccountItem {...account} />;
+      <div className="2xl:flex space-x-6">
+        <div className="flex-col space-y-6 w-full 2xl:w-4/6 mt-6">
+          {emailAccounts.map((account, idx) => {
+            return <EmailAccountItem key={idx} {...account} />;
           })}
         </div>
-        <div className="flex-col  px-6 h-min pt-4 mt-6  w-2/6">
+        <div className="flex-col  px-6 h-min pt-4 mt-6  2xl:w-2/6">
           <h4 className="font-semibold text-xl">Help & Support</h4>
           <div className="flex space-x-5 border-b-2 py-5">
             <img src={Twitch} className="rounded-lg w-[50px]" alt="twitch" />
@@ -82,7 +82,7 @@ export default function EmailAccounts() {
               </h4>
             </div>
           </div>
-          <div className="flex space-x-5 py-5  border-b-2">
+          <div className="flex space-x-5 py-5 border-b-2">
             <img src={Apple} className="rounded-lg w-[50px]" alt="twitch" />
             <div className="flex-col">
               <h4 className="font-semibold text-lg">Email us</h4>

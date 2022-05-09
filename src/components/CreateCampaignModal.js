@@ -1,9 +1,33 @@
 import React from "react";
-import { Modal, Button } from "flowbite-react";
 import Select from "react-select";
 import { AiOutlinePlus, AiOutlineClose } from "react-icons/ai";
 import { useNavigate } from "react-router-dom";
+import "./styles.css";
 export default function CreateCampaignModal({ toggleModal }) {
+  const emailStyles = {
+    multiValue: (provided, state) => ({
+      ...provided,
+      backgroundColor: "#E1EFFE",
+      color: "#1E429F",
+    }),
+    multiValueLabel: (provided, state) => ({
+      ...provided,
+      color: "#1E429F",
+      fontWeight: 500,
+    }),
+  };
+  const tagsStyles = {
+    multiValue: (provided, state) => ({
+      ...provided,
+      backgroundColor: "#FEECDC",
+      color: "#B43403",
+    }),
+    multiValueLabel: (provided, state) => ({
+      ...provided,
+      color: "#B43403",
+      fontWeight: 500,
+    }),
+  };
   const options = [
     { value: "thomas@hypemail.io", label: "thomas@hypemail.io" },
     { value: "thomas@ionio.io", label: "thomas@ionio.io" },
@@ -39,25 +63,30 @@ export default function CreateCampaignModal({ toggleModal }) {
         <div className="p-6 flex flex-col space-y-6">
           <form className="flex-col space-y-6">
             <div className="flex-col space-y-3">
-              <label for="name">
+              <label htmlFor="name">
                 <span className="font-semibold">Name</span>
               </label>
               <input
                 id="name"
-                placeHolder="29th June 2022 Campaign for Lawyers"
+                placeholder="29th June 2022 Campaign for Lawyers"
                 className="input"
                 type="text"
               />
             </div>
             <div className="flex-col space-y-3">
               <label className="font-semibold">Email accounts</label>
-              <Select options={options} isSearchable isMulti />
+              <Select
+                styles={emailStyles}
+                options={options}
+                isSearchable
+                isMulti
+              />
             </div>
             <div className="flex-col space-y-3">
-              <label for="tags">
+              <label htmlFor="tags">
                 <span className="font-semibold">Tags</span>
               </label>
-              <Select options={tags} isSearchable isMulti />
+              <Select styles={tagsStyles} options={tags} isSearchable isMulti />
             </div>
           </form>
         </div>

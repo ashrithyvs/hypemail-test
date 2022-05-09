@@ -1,6 +1,6 @@
 export { default as logo } from "./logo.svg";
 export { default as logoText } from "./logoText.png";
-export { default as Overview } from "./overview.svg";
+export { default as Overview } from "./Overview.svg";
 export { default as Templates } from "./templates.svg";
 export { default as Campaign } from "./campaigns.svg";
 export { default as EmailAccounts } from "./emailAccounts.svg";

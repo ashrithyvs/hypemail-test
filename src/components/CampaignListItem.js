@@ -1,3 +1,4 @@
+/* eslint-disable array-callback-return */
 import React from "react";
 import { AiFillClockCircle } from "react-icons/ai";
 export default function CampaignListItem({ title, emailAccounts, meta }) {
@@ -5,12 +6,15 @@ export default function CampaignListItem({ title, emailAccounts, meta }) {
     <div className="flex-col rounded-2xl space-y-2 pt-4 py-4 bg-white border shadow px-4">
       <div className="flex-col space-y-2">
         <div className="flex justify-between">
-          <div className="flex space-x-4">
+          <div className="4xl:flex 4xl:space-x-4">
             <h4 className="font-semibold text-lg">{title}</h4>
-            <div className="flex space-x-3">
-              {meta.tags.map((tag) => {
+            <div className="my-1 4xl-my-0 flex space-x-3">
+              {meta.tags.map((tag, idx) => {
                 return (
-                  <span className="px-3 text-sm font-medium h-min py-1 rounded-full bg-orange-100 text-orange-700">
+                  <span
+                    key={idx}
+                    className="px-3 text-sm font-medium h-min py-1 rounded-full bg-orange-100 text-orange-700"
+                  >
                     {tag}
                   </span>
                 );
@@ -22,7 +26,7 @@ export default function CampaignListItem({ title, emailAccounts, meta }) {
               meta.status === "Running"
                 ? "text-green-600 bg-green-100"
                 : "text-red-600 bg-red-100"
-            } text-xs px-4 font-medium rounded-full py-2 inline`}
+            } text-xs px-4 h-min font-medium rounded-full py-2 inline`}
           >
             {meta.status} | {meta.elapsedTime}
           </span>
@@ -31,7 +35,7 @@ export default function CampaignListItem({ title, emailAccounts, meta }) {
         {emailAccounts.map((email, idx) => {
           if (idx < 2) {
             return (
-              <span className="text-gray-400 font-medium text-sm">
+              <span key={idx} className="text-gray-400 font-medium text-sm">
                 {email},{" "}
               </span>
             );
@@ -43,7 +47,7 @@ export default function CampaignListItem({ title, emailAccounts, meta }) {
           </span>
         ) : null}
       </div>
-      <div className="flex flex-wrap space-x-16 p-4">
+      <div className="flex justify-evenly 3xl:justify-start flex-wrap 3xl:space-x-16 p-4">
         <div className="flex-col space-y-3">
           <h4 className="text-2xl font-medium">{meta.prospectsCount}</h4>
           <span className="text-md text-gray-500">Prospects</span>

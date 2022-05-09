@@ -1,0 +1,12 @@
+.e-multiselect .e-multi-select-wrapper .e-chips .e-chipcontent {
+    font-family: cursive;
+    font-size: 20px;
+    -webkit-text-fill-color: blue;
+}
+
+.e-multi-select-wrapper .e-chips {
+    background-color: aqua;
+    height: 26px;
+}.e-multiselect.e-input-group .e-multi-select-wrapper {
+    background-color: red;
+}

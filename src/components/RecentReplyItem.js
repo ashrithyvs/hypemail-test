@@ -21,7 +21,7 @@ export default function RecentReplyItem({
         alt={mailId}
       />
       <div className="flex-col">
-        <div className="flex justify-between">
+        <div className="2xl:flex justify-between">
           <h4 className="text-md font-semibold text-gray-900">{mailId}</h4>
           <h4 className="text-md text-gray-400">{timeStamp}</h4>
         </div>

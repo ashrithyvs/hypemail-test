@@ -13,20 +13,42 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+input:checked + .toggle-bg:after {
+  transform: translateX(100%);
+  border-color: white;
+}
+input:checked + .toggle-bg {
+  background: #1C64F2;
+  border-color: #212428;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
 .primary-btn{
   @apply px-4 py-2 items-center bg-primary text-white font-semibold rounded-lg text-sm hover:bg-primary-hover;
   }
 .secondary-btn{
-    @apply px-4 py-2 h-min shadow-md items-center border  bg-secondary text-gray-900 font-semibold rounded-lg text-sm hover:bg-secondary-hover;
+    @apply px-4 py-2 h-min shadow-sm items-center border  bg-secondary text-gray-900 font-semibold rounded-lg text-sm hover:bg-secondary-hover;
     }
 
 .active-tab{
-  @apply inline-block border cursor-pointer shadow-md py-2 px-6 text-white bg-blue-600 ;
+  @apply inline-block border cursor-pointer shadow-sm py-2 px-6 text-white bg-blue-600 ;
 }
 .inactive-tab{
-  @apply inline-block border-gray-200 shadow-md border-[1px] py-2 px-6 cursor-pointer hover:text-gray-900 hover:bg-gray-100 bg-white dark:hover:bg-gray-800 dark:hover:text-white;
+  @apply inline-block border-gray-200 shadow-sm border-[1px] py-2 px-6 cursor-pointer hover:text-gray-900 hover:bg-gray-100 bg-white dark:hover:bg-gray-800 dark:hover:text-white;
 }
-
+.active-page{
+  @apply text-2xl text-primary font-medium bg-gray-100 rounded-lg;
+}
 .input{
   @apply bg-gray-50 w-full text-gray-500 border-gray-200 rounded-xl;
 }
@@ -41,4 +63,7 @@ code {
 
 .disabled-step{
   @apply inline-block p-4 text-gray-400 rounded-t-lg cursor-not-allowed dark:text-gray-500;
+}
+.icon{
+  @apply hover:bg-secondary-hover cursor-pointer p-2 rounded-full;
 }

@@ -11,26 +11,18 @@ export default function Leads({ setCurrentStep }) {
     <div className="bg-white h-full">
       {csvFile ? (
         <div className="w-full px-6 flex-col space-y-6">
-          <div className="flex justify-between">
+          <div className="3xl:flex justify-between">
             <div className="flex w-4/6 space-x-4 items-center">
               <input
                 className="input"
                 type="text"
                 placeholder="Search for leads"
               />
-              <FaUserMinus size={25} color="#000" className="cursor-pointer" />
-              <RiDeleteBin6Fill
-                size={25}
-                color="#000"
-                className="cursor-pointer"
-              />
-              <BiDotsVerticalRounded
-                size={25}
-                color="#000"
-                className="cursor-pointer"
-              />
+              <FaUserMinus size={40} color="#000" className="icon" />
+              <RiDeleteBin6Fill size={40} color="#000" className="icon" />
+              <BiDotsVerticalRounded size={40} color="#000" className="icon" />
             </div>
-            <div className="flex w-2/6 space-x-6 justify-end">
+            <div className="flex 3xl:w-2/6 space-x-6 justify-end">
               <button className="secondary-btn px-10 py-3">Add Manually</button>
               <button className="secondary-btn px-10 py-3 border-primary text-primary">
                 Upload a CSV
@@ -112,7 +104,7 @@ export default function Leads({ setCurrentStep }) {
           </Table>
         </div>
       ) : (
-        <div className="bg-white w-4/6 mx-auto border shadow px-12 m-16 flex space-x-10 py-16 rounded">
+        <div className="bg-white w-full 2xl:w-5/6 3xl:w-4/6 mx-auto border shadow px-12 m-16 flex space-x-10 py-16 rounded">
           <div className="flex-col space-y-7 text-left">
             <h4 className="text-2xl text-gray-900 font-bold">Add new Leads</h4>
             <p>

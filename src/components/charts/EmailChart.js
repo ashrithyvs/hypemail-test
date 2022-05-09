@@ -1,3 +1,4 @@
+/* eslint-disable react/style-prop-object */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useState } from "react";
 import LineChart from "./LineChart";
@@ -71,10 +72,11 @@ export default function EmailChart() {
           </Tooltip>
         </div>
 
-        <ul class="flex flex-wrap text-sm font-medium text-center text-gray-500 dark:text-gray-400 rounded-lg">
+        <ul className="flex flex-wrap text-sm font-medium text-center text-gray-500 dark:text-gray-400 rounded-lg">
           {dataTypes.map((item, idx) => {
             return (
               <li
+                key={idx}
                 className={`${
                   dataRange === item ? `active-tab ` : "inactive-tab"
                 } ${

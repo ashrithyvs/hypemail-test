@@ -1,6 +1,8 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function EmailAccountItem({ name, mailId, status, meta }) {
+  const navigate = useNavigate();
   return (
     <div className="flex-col rounded-2xl space-y-2 pt-4 py-4 bg-white border shadow px-4">
       <div className="flex-col space-y-2">
@@ -19,22 +21,22 @@ export default function EmailAccountItem({ name, mailId, status, meta }) {
             {status}
           </span>
         </div>
-        <div className="flex flex-wrap space-x-16 p-4">
-          <div className="flex-col space-y-3">
+        <div className="flex justify-evenly 4xl:justify-start flex-wrap 4xl:space-x-16 p-4">
+          <div className="flex-col space-y-3 my-2 2xl:my-0">
             <h4 className="text-2xl font-medium">{meta.runningCampaigns}</h4>
             <span className="text-md text-gray-500">Running campaigns</span>
           </div>
-          <div className="flex-col space-y-3">
+          <div className="flex-col space-y-3 my-2 2xl:my-0">
             <h4 className="text-2xl font-medium">{meta.emailsSentToday}</h4>
             <span className="text-md text-gray-500">Today emails sent</span>
           </div>
-          <div className="flex-col space-y-3">
+          <div className="flex-col space-y-3 my-2 2xl:my-0">
             <h4 className="text-2xl font-medium">{meta.emailsSentThisMonth}</h4>
             <span className="text-md text-gray-500">
               This months emails sent
             </span>
           </div>
-          <div className="flex-col space-y-3">
+          <div className="flex-col space-y-3 my-2 2xl:my-0">
             <h4 className="text-2xl font-medium">{meta.totalEmailsSent}</h4>
             <span className="text-md text-gray-500">Total emails sent</span>
           </div>
@@ -47,7 +49,15 @@ export default function EmailAccountItem({ name, mailId, status, meta }) {
             <button className="secondary-btn px-8 shadow-sm text-gray-600 ">
               Disconnect
             </button>
-            <button className="primary-btn  px-8  shadow-sm">Update</button>
+
+            <button
+              onClick={() => {
+                navigate(`/update-email?email=${1}`);
+              }}
+              className="primary-btn  px-8  shadow-sm"
+            >
+              Update
+            </button>
           </div>
         </div>
       </div>

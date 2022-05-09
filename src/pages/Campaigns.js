@@ -129,9 +129,9 @@ export default function Campaigns() {
     },
   ];
   return (
-    <div className="flex-col items-center justify-center my-4">
-      <div className="flex items-center justify-between ">
-        <div className="flex justify-start w-1/2 items-center space-x-10 ">
+    <div className="flex-col items-center justify-center">
+      <div className="xl:flex items-center justify-between py-2">
+        <div className="flex justify-start xl:w-1/2 items-center space-x-10 ">
           <h4 className="text-2xl font-bold">Campaigns</h4>
           <div className="w-full flex self-center">
             <input
@@ -141,14 +141,14 @@ export default function Campaigns() {
               placeholder="Search for all Campaigns by Name & Tags"
             />
             <label
-              for="search"
+              htmlFor="search"
               style={{ position: "relative", left: -30, top: 12 }}
             >
               <RiFilter2Fill />
             </label>
           </div>
         </div>
-        <div className="w-1/2 justify-end flex space-x-2 items-center">
+        <div className="mt-4 xl:mt-0 xl:w-1/2 justify-end flex space-x-2 items-center">
           <button
             onClick={() => toggleModal("large-modal")}
             className="flex space-x-2 primary-btn"
@@ -159,13 +159,14 @@ export default function Campaigns() {
           <Pagination />
         </div>
       </div>
-      <div className="flex space-x-6">
-        <div className="flex-col space-y-6 w-4/6">
-          <div className="flex space-x-12 items-center">
-            <ul class=" flex-wrap text-sm font-medium text-center flex text-gray-900 dark:text-gray-100 rounded-lg my-6">
+      <div className="xl:flex xl:space-x-6 flex-wrap">
+        <div className="flex-col space-y-6 xl:w-[55%]">
+          <div className="2xl:flex 2xl:space-x-12 items-center">
+            <ul className=" flex-wrap text-sm font-medium text-center flex text-gray-900 dark:text-gray-100 rounded-lg my-6">
               {statusTypes.map((item, idx) => {
                 return (
                   <li
+                    key={idx}
                     className={`${
                       dataRange === item ? `active-tab ` : "inactive-tab"
                     } ${
@@ -184,7 +185,7 @@ export default function Campaigns() {
                 );
               })}
             </ul>
-            <button className="flex secondary-btn space-x-2">
+            <button className="flex secondary-btn shadow-sm space-x-2">
               <AiOutlineCalendar />
               <span>This week</span>
             </button>
@@ -193,6 +194,7 @@ export default function Campaigns() {
             {campaignsData.map((campaign, idx) => {
               return (
                 <CampaignListItem
+                  key={idx}
                   title={campaign.title}
                   emailAccounts={campaign.emailAccounts}
                   meta={campaign.meta}
@@ -201,15 +203,16 @@ export default function Campaigns() {
             })}
           </div>
         </div>
-        <div className="flex-col shadow bg-white rounded px-6 h-min pt-4 mt-6  w-2/6">
+        <div className="flex-col shadow bg-white rounded px-6 h-min pt-4 mt-6 xl:w-[40%]">
           <h4 className="font-semibold text-gray-900 text-xl my-4">
             Recent Replies
           </h4>
           <div className="flex-col">
-            {repliesData.map((reply) => {
+            {repliesData.map((reply, idx) => {
               return (
                 <RecentReplyItem
                   profilePicture={reply.profilePicture}
+                  key={idx}
                   mailId={reply.mailId}
                   body={reply.body}
                   timeStamp={reply.timeStamp}

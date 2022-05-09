@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useState } from "react";
 import useQuery from "../utils/useQuery";
@@ -40,13 +41,13 @@ export default function CreateCampaignFlow() {
   ];
   return (
     <div className="flex-col space-y-4">
-      <div className="flex justify-between py-3">
+      <div className="2xl:flex 2xl:justify-between py-3">
         <div className="flex space-x-6 items-center">
-          <IoMdArrowRoundBack size={25} />
+          <IoMdArrowRoundBack className="icon" size={40} />
           <h4 className="text-xl font-semibold">{campaignDetails.title}</h4>
-          <h4 className="text-xs text-gray-400">{campaignDetails.timeStamp}</h4>
+          <h4 className="text-xs text-gray-500">{campaignDetails.timeStamp}</h4>
         </div>
-        <div className="flex space-x-4 h-min">
+        <div className="justify-end items-center flex space-x-4 h-min">
           <AiFillQuestionCircle color="#E02424" />
           <FaUserPlus color="#E02424" />
           <h4 className="text-sm text-red-600 font-semibold">
